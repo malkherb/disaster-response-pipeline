@@ -2,7 +2,8 @@
 
 This project's objective is to create a pipeline that categorizes emergency messages according to the needs communicated by the sender.
 
-The following files are in repo:
+### The following files are in repo:
+
     - app folder:
         1- run.py: a python file is used to initiate the web app.
         2- templates: a folder containing supporting interface files.
