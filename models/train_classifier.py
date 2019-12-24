@@ -46,30 +46,27 @@ def load_data(database_filepath):
 	category_names = y.columns
 	return X, y, category_names
 
-
 def tokenize(text):
-    """
+	"""
     Tokenizes text data
     Args:
     text string: Messages as text data
     Returns:
     words list: Processed text after tokenizing and normalizing the text.
     """
-	def tokenize(text):
+	#Normalize text
+	norm_words = re.sub(r'[^a-zA-Z0–9]',' ',text)
  
-	 #Normalize text
-	 norm_words = re.sub(r'[^a-zA-Z0–9]',' ',text)
+	#Tokenze words
+	words = word_tokenize(norm_words)
  
-	 #Tokenze words
-	 words = word_tokenize(norm_words)
+	#Stop words 
+	words = [w for w in words if w not in stopwords.words("english")]
  
-	 #Stop words 
-	 words = [w for w in words if w not in stopwords.words("english")]
+	#Lemmatize
+	lemmed = [WordNetLemmatizer().lemmatize(w, pos="v") for w in words]
  
-	 #Lemmatize
-	 lemmed = [WordNetLemmatizer().lemmatize(w, pos="v") for w in words]
- 
-	 return lemmed
+	return lemmed
 
 
 def build_model():
