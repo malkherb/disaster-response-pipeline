@@ -23,9 +23,6 @@ def load_data(database_filepath):
 	import numpy as np
 	import pandas as pd
 	import pickle
-	from nltk.tokenize import word_tokenize
-	from nltk.stem import WordNetLemmatizer
-	from nltk.corpus import stopwords
 	import re
 	from sklearn.ensemble import RandomForestClassifier
 	from sklearn.metrics import classification_report, accuracy_score, precision_score, recall_score, f1_score, precision_recall_fscore_support, label_ranking_average_precision_score
@@ -35,8 +32,6 @@ def load_data(database_filepath):
 	from sklearn.pipeline import Pipeline
 	from sklearn.tree import DecisionTreeClassifier
 	from sqlalchemy import create_engine
-	from nltk.corpus import stopwords
-	from nltk.tokenize import word_tokenize
 	from nltk.stem.porter import PorterStemmer
 	from sklearn.multiclass import OneVsRestClassifier
 	from sklearn.svm import LinearSVC
