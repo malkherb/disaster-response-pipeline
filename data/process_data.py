@@ -48,7 +48,7 @@ def clean_data(df):
     df.drop('categories', axis = 1, inplace = True)
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories],axis=1)
-    # drop duplicates
+    # drop duplicates and NaNs:
     df.drop_duplicates(inplace=True)
     df = df[df['related'] != 2]
     df =df[~df.isin([np.nan, np.inf, -np.inf]).any(1)]
